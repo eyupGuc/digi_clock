@@ -61,7 +61,7 @@ const fetchWeather = async () => {
 
     clockTop.innerHTML = `<p>${time}</p> `;
     clockMiddle.innerHTML = `<table width="100%"><tr><th>degrees</th> <th>air</th> <th>humidity</th></tr><tr><td>${temp}</td> <td>${description}</td> <td>${humidity}</td></tr></table>`;
-    clockBottom.innerHTML = `<table width="100%"><tr><th>month</th> <th>date</th> <th>day</th></tr><tr><td>${month}</td> <td>${dayOfTheRite}</td> <td>${day}</td></tr></table> <h2>${name}</h2>`;
+    clockBottom.innerHTML = `<table width="100%"><tr><th>month</th> <th>date</th> <th>day</th></tr><tr><td>${month}</td> <td>${dayOfTheRite}</td> <td>${day}</td></tr></table> <h2 style="margin:2rem;">${name}</h2>`;
   }, 1000);
 };
 fetchWeather();
