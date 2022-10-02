@@ -15,6 +15,7 @@ const fetchWeather = async () => {
   const temp = data.main.temp.toFixed(1);
   const humidity = data.main.humidity;
   const description = data.weather[0].main;
+  const iconUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
   console.log(description);
   console.log(humidity);
   console.log(temp);
@@ -44,7 +45,7 @@ const fetchWeather = async () => {
     const time = `${hour} : ${minutes} :${seconds} ${amPm}`;
 
     clockTop.innerHTML = `<p>${time}</p> `;
-    clockMiddle.innerHTML = `<table width="100%"><tr><th>degrees</th> <th>air</th> <th>humidity</th></tr><tr><td>${temp}</td> <td>${description}</td> <td>${humidity}</td></tr></table>`;
+    clockMiddle.innerHTML = `<table width="100%"><tr><th>degrees</th> <th>air</th> <th>humidity</th></tr><tr><td>${temp}</td> <td><img class="city-icon" src="${iconUrl}"></td> <td>${humidity}</td></tr></table>`;
     clockBottom.innerHTML = `<table width="100%"><tr><th>month</th> <th>date</th> <th>day</th></tr><tr><td>${month}</td> <td>${dayOfTheRite}</td> <td>${day}</td></tr></table> <h2 style="margin:2rem;">${name}</h2>`;
   }, 1000);
 };

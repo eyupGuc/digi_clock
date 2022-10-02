@@ -17,11 +17,6 @@ body {
   border: 5px solid grey;
 }
 
-.top {
-  background-color: aqua;
-  border: 2px solid red;
-}
-
 .clockTop {
   padding: 1rem;
 }
