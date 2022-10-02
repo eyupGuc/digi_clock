@@ -1,4 +1,3 @@
-// const container = document.querySelector(".container");
 const clockTop = document.querySelector(".clockTop");
 const clockMiddle = document.querySelector(".clockMiddle");
 const clockBottom = document.querySelector(".clockBottom");
@@ -29,9 +28,6 @@ const fetchWeather = async () => {
     const day = days[new Date().getDay()];
     const month = new Date().getMonth() + 1;
     const dayOfTheRite = new Date().getDate();
-    // console.log(dayOfTheRite);
-    // console.log(month);
-    // console.log(day);
 
     seconds < 10 ? (seconds = "0" + seconds) : seconds;
     minutes < 10 ? (minutes = "0" + minutes) : minutes;
@@ -44,18 +40,6 @@ const fetchWeather = async () => {
       hour = hour - 12;
       amPm = "PM";
     }
-
-    // hour < 13 ? (amPm = "AM" && hour) : (amPm = "PM" && (hour = hsour - 12));
-    // amPm = "AM" ? (hour = "0" + hour) : hour;
-
-    // if (hour < 13) {
-    //   amPm = "AM";
-    //   hour;
-    // } else {
-    //   amPm = "PM";
-    //   hour = hour - 12;
-    //   hour < 10 ? (hour = "0" + hour) : hour;
-    // }
 
     const time = `${hour} : ${minutes} :${seconds} ${amPm}`;
 

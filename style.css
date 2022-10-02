@@ -11,8 +11,8 @@ body {
   background-color: azure;
   border-radius: 50%;
   box-shadow: 10px 10px grey;
-  width: 600px;
-  height: 600px;
+  width: 700px;
+  height: 700px;
   text-align: center;
   border: 5px solid grey;
 }
@@ -20,4 +20,16 @@ body {
 .top {
   background-color: aqua;
   border: 2px solid red;
+}
+
+.clockTop {
+  padding: 1rem;
+}
+
+.clockMiddle {
+  padding: 1rem;
+}
+
+.clockBottom {
+  padding: 1rem;
 }
