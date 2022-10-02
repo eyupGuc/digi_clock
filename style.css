@@ -5,6 +5,7 @@ body {
   height: 100vh;
   font-size: 3rem;
   background-color: black;
+  background-image: url("./img/brick-738387_1920.jpg");
 }
 
 .container {
