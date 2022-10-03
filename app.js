@@ -21,8 +21,6 @@ const fetchWeather = async () => {
 
   const name = data.name;
   const temp = data.main.temp.toFixed(1);
-  const humidity = data.main.humidity;
-  const description = data.weather[0].main;
   const iconUrlAWS = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${data.weather[0].icon}.svg`;
 
   let amPm;
