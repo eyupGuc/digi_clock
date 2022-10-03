@@ -2,7 +2,15 @@ const clockTop = document.querySelector(".clockTop");
 const clockMiddle = document.querySelector(".clockMiddle");
 const clockBottom = document.querySelector(".clockBottom");
 
-const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
 
 const fetchWeather = async () => {
   const res = await fetch(
@@ -10,15 +18,12 @@ const fetchWeather = async () => {
   );
   //
   const data = await res.json();
-  console.log(data);
+
   const name = data.name;
   const temp = data.main.temp.toFixed(1);
   const humidity = data.main.humidity;
   const description = data.weather[0].main;
   const iconUrlAWS = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${data.weather[0].icon}.svg`;
-  console.log(description);
-  console.log(humidity);
-  console.log(temp);
 
   let amPm;
   setInterval(() => {
@@ -42,11 +47,10 @@ const fetchWeather = async () => {
       amPm = "PM";
     }
 
-    const time = `${hour} : ${minutes} :${seconds} ${amPm}`;
+    clockTop.innerHTML = `<p><span>${amPm}</span> ${hour} : ${minutes} <span>${seconds} </span></p> `;
 
-    clockTop.innerHTML = `<p>${time}</p> `;
-    clockMiddle.innerHTML = `<table width="100%"><tr><th>degrees</th> <th>air</th> <th>humidity</th></tr><tr><td>${temp}<sup>°C</sup></td> <td><img class="city-icon" src="${iconUrlAWS}"></td> <td>${humidity}<a href="#">  <i class="fa-thin fa-droplet-degree"></i> </a> </td></tr></table>`;
-    clockBottom.innerHTML = `<table width="100%"><tr><th>month</th> <th>date</th> <th>day</th></tr><tr><td>${month}</td> <td>${dayOfTheRite}</td> <td>${day}</td></tr></table> <h2 style="margin:2rem;">${name}</h2>`;
+    clockMiddle.innerHTML = `<table width="100%"><tr><td>${temp}<sup>°C</sup></td> <td><img class="city-icon" src="${iconUrlAWS}"></td> <td>${data.main.pressure} hPa   </td></tr></table>`;
+    clockBottom.innerHTML = `<table width="100%"></tr><tr><td>${dayOfTheRite}(${day})</td><td>/</td> <td>${month}</td><td>/</td> <td>${year}</td></tr></table> <p>${name}</p> `;
   }, 1000);
 };
 fetchWeather();
